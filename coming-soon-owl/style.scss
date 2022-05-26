@@ -1,0 +1,71 @@
+svg {
+  width: 50rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+svg {
+  transition: all 4s ease;
+  animation: fly-owl 4s linear infinite reverse;
+
+  #eyelids {
+    animation: blink-eye 4s infinite;
+  }
+
+  #right-wing {
+    animation: flap-right-wing 2s infinite;
+    transform-origin: 34% 9%;
+  }
+
+  #sign {
+    animation: blink-sign 2s infinite;
+    transform-origin: 34% 9%;
+  }
+}
+
+@keyframes blink-sign {
+  0%,
+  50%,
+  100% {
+    opacity: 0.95;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes fly-owl {
+  0%,
+  100% {
+    transform: translateY(25px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes blink-eye {
+  0%,
+  90%,
+  95%,
+  100% {
+    clip-path: ellipse(87% 63% at 48% -41%);
+  }
+  92.5%,
+  97.5% {
+    clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
+
+@keyframes flap-right-wing {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg) translateX(-2.9rem) skew(4deg, 1deg);
+  }
+  25%,
+  75% {
+    transform: rotate(-10deg) translateX(-6.9rem) skew(0deg, 1deg);
+  }
+}

@@ -1,0 +1,137 @@
+svg {
+  width: 50rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+svg {
+  -webkit-transition: all 4s ease;
+  transition: all 4s ease;
+  animation: fly-owl 4s linear infinite reverse;
+}
+
+svg #eyelids {
+  -webkit-animation: blink-eye 4s infinite;
+          animation: blink-eye 4s infinite;
+}
+
+svg #right-wing {
+  -webkit-animation: flap-right-wing 2s infinite;
+          animation: flap-right-wing 2s infinite;
+  -webkit-transform-origin: 34% 9%;
+          transform-origin: 34% 9%;
+}
+
+svg #sign {
+  -webkit-animation: blink-sign 2s infinite;
+          animation: blink-sign 2s infinite;
+  -webkit-transform-origin: 34% 9%;
+          transform-origin: 34% 9%;
+}
+
+@-webkit-keyframes blink-sign {
+  0%,
+  50%,
+  100% {
+    opacity: 0.95;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink-sign {
+  0%,
+  50%,
+  100% {
+    opacity: 0.95;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fly-owl {
+  0%,
+  100% {
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes fly-owl {
+  0%,
+  100% {
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes blink-eye {
+  0%,
+  90%,
+  95%,
+  100% {
+    -webkit-clip-path: ellipse(87% 63% at 48% -41%);
+            clip-path: ellipse(87% 63% at 48% -41%);
+  }
+  92.5%,
+  97.5% {
+    -webkit-clip-path: ellipse(70% 70% at 43% 39%);
+            clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
+
+@keyframes blink-eye {
+  0%,
+  90%,
+  95%,
+  100% {
+    -webkit-clip-path: ellipse(87% 63% at 48% -41%);
+            clip-path: ellipse(87% 63% at 48% -41%);
+  }
+  92.5%,
+  97.5% {
+    -webkit-clip-path: ellipse(70% 70% at 43% 39%);
+            clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
+
+@-webkit-keyframes flap-right-wing {
+  0%,
+  50%,
+  100% {
+    -webkit-transform: rotate(0deg) translateX(-2.9rem) skew(4deg, 1deg);
+            transform: rotate(0deg) translateX(-2.9rem) skew(4deg, 1deg);
+  }
+  25%,
+  75% {
+    -webkit-transform: rotate(-10deg) translateX(-6.9rem) skew(0deg, 1deg);
+            transform: rotate(-10deg) translateX(-6.9rem) skew(0deg, 1deg);
+  }
+}
+
+@keyframes flap-right-wing {
+  0%,
+  50%,
+  100% {
+    -webkit-transform: rotate(0deg) translateX(-2.9rem) skew(4deg, 1deg);
+            transform: rotate(0deg) translateX(-2.9rem) skew(4deg, 1deg);
+  }
+  25%,
+  75% {
+    -webkit-transform: rotate(-10deg) translateX(-6.9rem) skew(0deg, 1deg);
+            transform: rotate(-10deg) translateX(-6.9rem) skew(0deg, 1deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */

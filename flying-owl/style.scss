@@ -1,0 +1,105 @@
+svg {
+  width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: all 4s ease;
+  animation: fly-owl 4s linear infinite reverse;
+
+  #stars {
+    circle,
+    polygon,
+    path {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center center;
+      animation: animate_stars 5.2s 1s linear infinite;
+    }
+  }
+  #shining {
+    animation: growing 5s infinite;
+  }
+  #eyelids {
+    animation: blink-eye 4s infinite;
+  }
+  #left-wing {
+    animation: flap-left-wing 2s alternate infinite;
+    transform-origin: 68% 11%;
+  }
+  #right-wing {
+    animation: flap-right-wing 2s infinite;
+    transform-origin: 34% 9%;
+  }
+}
+
+@keyframes fly-owl {
+  0%,
+  100% {
+    transform: translateY(25px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes animate_stars {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+}
+
+@keyframes growing {
+  0% {
+    opacity: 0;
+    clip-path: circle(14% at 5.313rem 6.875rem);
+    clip-path: circle(61% at 51% 185%);
+  }
+  70% {
+    opacity: 1;
+    clip-path: circle(61% at 51% 70%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink-eye {
+  0%,
+  90%,
+  95%,
+  100% {
+    clip-path: ellipse(87% 63% at 48% -41%);
+  }
+  92.5%,
+  97.5% {
+    clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
+
+@keyframes flap-left-wing {
+  0%,
+  50%,
+  100% {
+    transform: rotate(6deg) translateX(2.3rem) skew(3deg, 351deg);
+  }
+  25%,
+  75% {
+    transform: rotate(11deg) translateX(7rem) skew(0deg, 356deg);
+  }
+}
+
+@keyframes flap-right-wing {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg) translateX(-2.9rem) skew(4deg, 1deg);
+  }
+  25%,
+  75% {
+    transform: rotate(-10deg) translateX(-6.9rem) skew(0deg, 1deg);
+  }
+}
