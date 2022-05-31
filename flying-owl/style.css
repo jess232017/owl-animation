@@ -29,8 +29,8 @@ svg #eyelids {
 }
 
 svg #left-wing {
-  -webkit-animation: flap-left-wing 2s alternate infinite;
-          animation: flap-left-wing 2s alternate infinite;
+  -webkit-animation: flap-left-wing 2s infinite;
+          animation: flap-left-wing 2s infinite;
   -webkit-transform-origin: 68% 11%;
           transform-origin: 68% 11%;
 }

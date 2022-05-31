@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  position: relative;
+}
+
+svg {
+  pointer-events: none;
+  position: absolute;
+  background-position: contain;
+  left: 32.5%;
+  top: 15%;
+  width: 6.5rem;
+  z-index: 1060;
+  visibility: hidden;
+  &.showing {
+    visibility: visible;
+    // animation: scaleDown 5.5s linear forwards,
+    // fly-fixed 3.5s linear infinite reverse;
+    animation: scaleDown 0.5s 1 forwards, fly-fixed 3.5s linear infinite reverse;
+    #letter-wing {
+      visibility: visible;
+    }
+    #right-wing {
+      visibility: hidden;
+    }
+  }
+  &.flying {
+    visibility: visible;
+    animation: fly 3500ms linear forwards;
+    #letter-wing {
+      visibility: hidden;
+    }
+    #right-wing {
+      visibility: visible;
+    }
+  }
+
+  #eyelid {
+    animation: blink-eye 4s infinite;
+  }
+
+  #left-wing {
+    //transform-origin: 68% 11%;
+    //animation: flap-left-wing 2s infinite;
+    transform-origin: 46% -33%;
+    animation: wingLeft 1000ms cubic-bezier(0.545, 0.08, 0.52, 0.975) infinite
+      alternate;
+  }
+  #right-wing {
+    //transform-origin: 68% 11%;
+    //animation: flap-left-wing 2s infinite;
+    transform-origin: 46% -33%;
+    animation: wingRight 1000ms cubic-bezier(0.545, 0.08, 0.52, 0.975) infinite
+      alternate;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    top: 0%;
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    top: 15%;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fly {
+  0% {
+    //transform: rotateX(-120deg) rotateZ(0deg) rotateX(10deg);
+    //transform: rotateX(-490deg) rotateZ(-145deg) rotateX(15deg);
+    width: 6.5rem;
+    left: 32.5%;
+    top: 15%;
+    opacity: 1;
+  }
+  80% {
+    //transform: rotateX(-120deg) rotateZ(360deg) rotateX(10deg);
+    // transform: rotateX(-490deg) rotateZ(-145deg) rotateX(15deg);
+    left: 15.5%;
+    top: -8%;
+    opacity: 1;
+    width: 6.5rem;
+  }
+  100% {
+    //transform: rotateX(-490deg) rotateZ(-180deg) rotateX(15deg);
+    left: 15.5%;
+    width: 3rem;
+    top: -13%;
+    opacity: 0;
+  }
+}
+
+@keyframes fly-fixed {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+}
+
+@keyframes wingLeft {
+  0% {
+    transform: rotateY(-40deg);
+    transform: rotateY(-40deg);
+  }
+  100% {
+    transform: rotateY(40deg);
+    transform: rotateY(40deg);
+  }
+}
+@keyframes wingRight {
+  0% {
+    transform: rotateY(40deg);
+  }
+  100% {
+    transform: rotateY(-40deg);
+  }
+}
+
+@keyframes blink-eye {
+  0%,
+  90%,
+  95%,
+  100% {
+    //clip-path: ellipse(87% 63% at 48% -41%);
+    clip-path: ellipse(83% 54% at 48% -41%);
+  }
+  92.5%,
+  97.5% {
+    clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
+
+@keyframes flap-left-wing {
+  0%,
+  50%,
+  100% {
+    transform: rotate(6deg) translateX(2.3rem) skew(3deg, 351deg);
+  }
+  25%,
+  75% {
+    transform: rotate(11deg) translateX(7rem) skew(0deg, 356deg);
+  }
+}
+
+@keyframes flap-right-wing {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg) translateX(-2.9rem) skew(4deg, 1deg);
+  }
+  25%,
+  75% {
+    transform: rotate(-10deg) translateX(-6.9rem) skew(0deg, 1deg);
+  }
+}

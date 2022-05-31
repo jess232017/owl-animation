@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+}
+
+div#owl-container {
+  width: 100%;
+  height: 50rem;
+  position: relative;
+  overflow: hidden;
+  // transition: all 4s ease;
+}
+
+svg {
+  width: 22rem;
+  position: absolute;
+  left: -25%;
+  transform: scale(1, 1);
+  animation: walk-owl 15s linear 0s infinite;
+
+  #owl-flag {
+    animation: fly-owl 3s alternate infinite;
+
+    #foot-right {
+      transform-origin: center 5px;
+      animation: leg infinite 0.7s 0s;
+    }
+
+    #foot-left {
+      transform-origin: center 5px;
+      animation: leg infinite 0.7s 1s;
+    }
+
+    #badge #flag {
+      animation: badge-animation 1s infinite ease-in-out;
+      #flag-start {
+        animation: flag-init 0.5s infinite alternate-reverse;
+        @keyframes flag-init {
+          0%,
+          100% {
+            transform: skewX(-4deg);
+          }
+          50% {
+            transform: skewX(0deg) skewY(-1.5deg);
+          }
+        }
+      }
+      #flag-middle {
+        animation: flag-init 0.5s infinite alternate-reverse;
+        @keyframes flag-maddit {
+          0%,
+          100% {
+            transform: skewX(-4deg);
+          }
+          50% {
+            transform: skewX(0deg) skewY(-0.8deg);
+          }
+        }
+      }
+      #flag-end {
+        animation: flag-init 0.5s infinite alternate-reverse;
+        @keyframes flag-end {
+          0%,
+          100% {
+            transform: skewX(-3deg);
+          }
+          50% {
+            transform: skewX(-1deg) skewY(-0.9deg);
+          }
+        }
+      }
+    }
+    #hand-badge {
+      animation: flap-right-wing 2s infinite;
+      //transform-origin: 34% 9%;
+      transform-origin: 7% 9%;
+    }
+    #eyelid {
+      animation: blink-eye 4s infinite;
+    }
+  }
+}
+
+@keyframes leg {
+  from,
+  to {
+    transform: none;
+  }
+  33% {
+    transform: rotate(-4deg);
+    transform: rotate(6deg);
+  }
+  66% {
+    transform: rotate(-8deg);
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes walk-owl {
+  0% {
+    transform: scale(1, 1);
+    left: -25%;
+  }
+  49% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(-1, 1);
+    left: 105%;
+  }
+  99% {
+    transform: scale(-1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+    left: -25%;
+  }
+}
+
+@keyframes flap-right-wing {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg) translateX(-2.9rem) skew(4deg, 1deg);
+  }
+  25%,
+  75% {
+    transform: rotate(-10deg) translateX(-6.9rem) skew(0deg, 1deg);
+  }
+}
+
+@keyframes fly-owl {
+  0% {
+    transform: translateY(25px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(25px);
+  }
+}
+
+@keyframes blink-eye {
+  0%,
+  90%,
+  95%,
+  100% {
+    //clip-path: ellipse(87% 63% at 48% -41%);
+    clip-path: ellipse(83% 54% at 48% -41%);
+  }
+  92.5%,
+  97.5% {
+    clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
