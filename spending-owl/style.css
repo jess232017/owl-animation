@@ -1,0 +1,68 @@
+svg {
+  width: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  -webkit-transition: all 4s ease;
+  transition: all 4s ease;
+  animation: fly-owl 4s linear infinite reverse;
+}
+
+svg #eyelids {
+  -webkit-animation: blink-eye 4s infinite;
+          animation: blink-eye 4s infinite;
+}
+
+@-webkit-keyframes fly-owl {
+  0%,
+  100% {
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes fly-owl {
+  0%,
+  100% {
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes blink-eye {
+  0%,
+  90%,
+  95%,
+  100% {
+    -webkit-clip-path: ellipse(87% 63% at 48% -41%);
+            clip-path: ellipse(87% 63% at 48% -41%);
+  }
+  92.5%,
+  97.5% {
+    -webkit-clip-path: ellipse(70% 70% at 43% 39%);
+            clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
+
+@keyframes blink-eye {
+  0%,
+  90%,
+  95%,
+  100% {
+    -webkit-clip-path: ellipse(87% 63% at 48% -41%);
+            clip-path: ellipse(87% 63% at 48% -41%);
+  }
+  92.5%,
+  97.5% {
+    -webkit-clip-path: ellipse(70% 70% at 43% 39%);
+            clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
+/*# sourceMappingURL=style.css.map */
