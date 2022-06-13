@@ -1,12 +1,61 @@
 svg {
-  width: 300px;
-  margin: 0 auto;
+  width: 20rem;
   overflow: hidden;
   transition: all 4s ease;
   animation: fly-owl 4s linear infinite reverse;
 
   #eyelids {
     animation: blink-eye 4s infinite;
+  }
+
+  #right-wing {
+    animation: flap-right-wing 2s infinite;
+  }
+
+  #paper-1 {
+    opacity: 0;
+    animation: snow-drop 1s linear 0.9s infinite normal;
+  }
+  #paper-2 {
+    opacity: 0;
+    animation: snow-drop 1s linear 1.2s infinite normal;
+  }
+  #paper-3 {
+    opacity: 0;
+    animation: snow-drop 1s linear 1.5s infinite normal;
+  }
+  #paper-4 {
+    opacity: 0;
+    animation: snow-drop 1s linear 1.8s infinite normal;
+  }
+  #paper-5 {
+    opacity: 0;
+    animation: snow-drop 1s linear 0.9s infinite normal;
+  }
+  #paper-6 {
+    opacity: 0;
+    animation: snow-drop 1s linear 1.2s infinite normal;
+  }
+  #paper-7 {
+    opacity: 0;
+    animation: snow-drop 1s linear 1.5s infinite normal;
+  }
+  #paper-8 {
+    opacity: 0;
+    animation: snow-drop 1s linear 1.8s infinite normal;
+  }
+
+  #wad-1 {
+    opacity: 0;
+    animation: fading-wad-wing 1s linear 0s infinite normal;
+  }
+  #wad-2 {
+    opacity: 0;
+    animation: fading-wad-wing 1s linear 0.3s infinite normal;
+  }
+  #wad-3 {
+    opacity: 0;
+    animation: fading-wad-wing 1s linear 0.6s infinite normal;
   }
 }
 
@@ -25,10 +74,126 @@ svg {
   90%,
   95%,
   100% {
-    clip-path: ellipse(87% 63% at 48% -41%);
+    clip-path: ellipse(94% 64% at 93% -38%);
   }
   92.5%,
   97.5% {
     clip-path: ellipse(70% 70% at 43% 39%);
+  }
+}
+
+@keyframes flap-right-wing {
+  0%,
+  50%,
+  100% {
+    transform: rotate(9deg) translateX(1.1rem) translateY(-3.9rem)
+      skew(4deg, 1deg);
+  }
+  25%,
+  75% {
+    transform: rotate(-5deg) translateX(-1.9rem) skew(0deg, 6deg);
+  }
+}
+
+@keyframes fading-paper {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fading-wad-wing {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes paper-flying {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotateX(0deg) rotateY(0deg)
+      rotateZ(0deg);
+  }
+  25% {
+    transform: translate(-62.5556px, -121px) scale(1) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(-0.2128px, -149.8571px) scale(1) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg);
+  }
+  75% {
+    transform: translate(13.8863px, -87.5714px) scale(1) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(3px, -6px) scale(1) rotateX(0deg) rotateY(0deg)
+      rotateZ(0deg);
+  }
+}
+
+@keyframes snow-drop {
+  $window-height-threshold: 1.5;
+
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+    margin-left: 0;
+  }
+
+  10% {
+    margin-left: 15px;
+  }
+
+  20% {
+    margin-left: 20px;
+  }
+
+  25% {
+    transform: translate(0, 250px / $window-height-threshold);
+    opacity: 0.75;
+  }
+
+  30% {
+    margin-left: 15px;
+  }
+
+  40% {
+    margin-left: 0;
+  }
+
+  50% {
+    transform: translate(0, 500px / $window-height-threshold);
+    opacity: 1;
+    margin-left: -15px;
+  }
+
+  60% {
+    margin-left: -20px;
+  }
+
+  70% {
+    margin-left: -15px;
+  }
+
+  75% {
+    transform: translate(0, 750px / $window-height-threshold);
+    opacity: 0.5;
+  }
+
+  80% {
+    margin-left: 0;
+  }
+
+  100% {
+    transform: translate(0, 1000px / $window-height-threshold);
+    opacity: 0;
   }
 }

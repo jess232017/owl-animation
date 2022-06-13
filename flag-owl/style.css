@@ -38,11 +38,6 @@ svg #owl-flag #foot-left {
           animation: leg infinite 0.7s 1s;
 }
 
-svg #owl-flag #badge #flag {
-  -webkit-animation: badge-animation 1s infinite ease-in-out;
-          animation: badge-animation 1s infinite ease-in-out;
-}
-
 svg #owl-flag #badge #flag #flag-start {
   animation: flag-init 0.5s infinite alternate-reverse;
 }

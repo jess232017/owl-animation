@@ -31,7 +31,6 @@ svg {
     }
 
     #badge #flag {
-      animation: badge-animation 1s infinite ease-in-out;
       #flag-start {
         animation: flag-init 0.5s infinite alternate-reverse;
         @keyframes flag-init {
